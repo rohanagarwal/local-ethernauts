@@ -18,6 +18,7 @@ contract Reentrance {
     function withdraw() public {
         if (balances[msg.sender] >= 1) {
             (bool result, ) = msg.sender.call{value: balances[msg.sender]}("");
+            console.log("result: %s", result);
             if (result) {
                 balances[msg.sender];
             }
