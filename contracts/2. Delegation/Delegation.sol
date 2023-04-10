@@ -14,11 +14,8 @@ contract Delegate {
 }
 /*
 When a function is executed with delegatecall these values do not change:
-
 address(this)
-
 msg.sender
-
 msg.value
 
 Reads and writes to state variables happen to the contract that loads and executes functions with delegatecall. Reads and writes never happen to the contract that holds functions that are retrieved.
@@ -26,7 +23,6 @@ Reads and writes to state variables happen to the contract that loads and execut
 So if ContractA uses delegatecall to execute a function from ContractB then the following two points are true:
 
 The state variables in ContractA can be read and written.
-
 The state variables in ContractB are never read or written.
 */
 
